@@ -1,28 +1,39 @@
-# generateMockVisitData
-generateMockVisitData的函数，其主要职责是生成一组模拟的用户访问记录数据。以下是该函数的具体实现步骤：
-1. 
-设备信息模拟：从预设的操作系统列表（包括Windows、MacOS、Linux、iOS、Android）中随机选择一项作为用户的设备信息。
-2. 
-访问时间记录：利用new Date().toLocaleString()获取当前的日期和时间，以此代表用户的访问时间。
-3. 
-MAC地址生成：通过生成一系列随机的十六进制数字并以冒号分隔，模拟生成一个MAC地址。
-4. 
-IP地址生成：生成一个随机的IPv4地址，每个部分的数字范围在0至255之间。
-5. 
-请求类型选择：从常见的HTTP请求类型（GET、POST、PUT、DELETE）中随机选取一项，代表用户的请求方式。
-6. 
-宽带账号构造：创建一个随机的字符串来模拟宽带账号。
 
-generateMockVisitData, whose primary responsibility is to generate a set of simulated user access record data. Here are the steps to implement the function:
-1. 
-Device Information Emulation: Randomly select one item from a preset list of operating systems (including Windows, MacOS, Linux, iOS, Android) as the user's device information.
-2. 
-Access time record: Use new Date().toLocaleString() to obtain the current date and time, which represents the user's access time.
-3. 
-MAC address generation: Simulates the generation of a MAC address by generating a series of random hexadecimal digits separated by colons.
-4. 
-IP Address Generation: Generate a random IPv4 address with a numeric range between 0 and 255 for each part.
-5. 
-Request Type Selection: Select one of the common HTTP request types (GET, POST, PUT, DELETE) to represent the user's request mode.
-6. 
-Broadband account construction: Create a random string to simulate a broadband account.
+## 功能概述
+
+`generateMockVisitData` 函数设计用于生成模拟的网站访问数据，这在软件开发和测试阶段尤为有用。它能够模拟不同操作系统上的用户访问行为，提供随机生成的设备信息、访问时间戳、MAC地址、IP地址、请求类型及宽带账号，而无需触及任何真实用户数据，确保隐私安全。
+
+## 实现细节
+
+- **设备信息**：从预设的操作系统列表中随机选择一个（如Windows、MacOS等）。
+- **访问时间**：记录函数执行时的当前时间（以本地时间字符串形式）。
+- **请求类型**：随机选择一个HTTP请求方法（GET、POST、PUT、DELETE）。
+- **MAC地址生成**：创建符合标准格式（如AA:BB:CC:DD:EE:FF）的随机MAC地址。
+- **IP地址生成**：生成一个看似合理的随机IPv4地址。
+- **宽带账号模拟**：创建一个格式化的假宽带账号标识符，便于测试账户相关的逻辑处理。
+
+## 许可证声明
+
+本代码片段遵循 **Apache License Version 2.0**。这意味着您可以自由地：
+
+- **使用** 本代码进行任何目的的项目开发。
+- **复制** 并分发原始或修改后的代码副本。
+- **修改** 代码以适应您的项目需求。
+
+然而，根据Apache 2.0许可证条款，您在进行上述操作时需满足以下条件：
+
+- **保持许可证和版权声明**：在分发包含本代码的作品时，需保持其原有的许可证文本和版权声明。
+- **无附加限制**：不得对再授权增加额外的限制条款。
+- **免责声明**：明确理解并同意作者不对使用本代码引起的任何损害负责。
+
+## 示例代码调用
+
+```javascript
+// 引入函数
+const { generateMockVisitData } = require('./generateMockVisitData');
+
+// 生成模拟数据
+const mockData = generateMockVisitData();
+
+// 输出数据（示例）
+console.log(mockData);
